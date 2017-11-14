@@ -1,0 +1,14 @@
+steps:
+- id: 'cgi-fcgi'
+  name: 'gcr.io/cloud-builders/docker'
+  args:
+    - 'build'
+    - '--tag=gcr.io/${PROJECT_ID}/cgi-fcgi:${latest}'
+    - '--tag=gcr.io/${PROJECT_ID}/cgi-fcgi:${BUILD_ID}'
+    - '--tag=gcr.io/${PROJECT_ID}/cgi-fcgi:${SHORT_SHA}'
+    - '.'
+
+images:
+  - 'gcr.io/${PROJECT_ID}/cgi-fcgi:${latest}'
+  - 'gcr.io/${PROJECT_ID}/cgi-fcgi:${BUILD_ID}'
+  - 'gcr.io/${PROJECT_ID}/cgi-fcgi:${SHORT_SHA}'
