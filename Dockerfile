@@ -1,7 +1,5 @@
 FROM alpine:latest
 
-MAINTAINER Raymond Walker <raymond.walker@greenpeace.org>
-
 RUN apk add --no-cache fcgi
 
 ENV \
@@ -9,4 +7,4 @@ ENV \
     SCRIPT_FILENAME="/health-check" \
     SCRIPT_NAME="/health-check"
 
-ENTRYPOINT ["/usr/bin/cgi-fcgi"]
+CMD ["/usr/bin/cgi-fcgi"]
